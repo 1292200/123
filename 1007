@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: tv3, server: bbb.misharony.club, port: 1234, type: trojan, password: !<str> 7410, skip-cert-verify: true, udp: true}
+  - {name: tv3, server: bbb.misharony.club, port: 1232, type: trojan, password: !<str> 7410, skip-cert-verify: true, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
