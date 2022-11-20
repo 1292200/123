@@ -58,7 +58,7 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - name: "TV3"🇰
+      - name: "TV3"
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
