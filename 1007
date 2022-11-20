@@ -37,7 +37,7 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
-      - 自建节点 🇭🇰
+      - name: "TV3"
       - DIRECT
   - name: ♻️ 自动选择
     type: url-test
@@ -50,7 +50,7 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
-      - 自建节点 🇭🇰
+      - name: "TV3"
       - ♻️ 自动选择
       - 🎯 全球直连
   - name: 📲 电报信息
@@ -58,26 +58,26 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 自建节点 🇭🇰
+      - name: "TV3"🇰
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 自建节点 🇭🇰
+      - name: "TV3"
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 自建节点 🇭🇰
+      - name: "TV3"
   - name: 📢 谷歌FCM
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 自建节点 🇭🇰
+      - name: "TV3"
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -100,7 +100,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 自建节点 🇭🇰
+      - name: "TV3"
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
