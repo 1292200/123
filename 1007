@@ -3,55 +3,81 @@ socks-port: 7891
 allow-lan: true
 mode: Rule
 log-level: info
-external-controller: :9090
+ipv6: true
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: true
+  default-nameserver:
+    - 114.114.114.114
+    - 223.5.5.5
+  enhanced-mode: redir-host
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - 114.114.114.114
+    - 223.5.5.5
+ 
 proxies:
-  - {name: tv1, server: bbb.misharony.club, port: 1232, type: trojan, password: !<str> 7410, skip-cert-verify: true, udp: true}
+- name: "TV3"
+    type: trojan
+    server: bbb.misharony.club
+    port: 1232
+    password: 7410
+    # udp: true
+    # sni: example.com # aka server name
+    # alpn:
+    #   - h2
+    #   - http/1.1
+    # skip-cert-verify: true
+ 
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
+      - 自建节点 🇭🇰
       - DIRECT
-      - tv1
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - tv1
+      - DIRECT
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
+      - 自建节点 🇭🇰
       - ♻️ 自动选择
       - 🎯 全球直连
-      - tv1
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - tv1
+      - 自建节点 🇭🇰
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - tv1
+      - 自建节点 🇭🇰
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - tv1
+      - 自建节点 🇭🇰
   - name: 📢 谷歌FCM
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - tv1
+      - 自建节点 🇭🇰
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -74,7 +100,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - tv1
+      - 自建节点 🇭🇰
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
